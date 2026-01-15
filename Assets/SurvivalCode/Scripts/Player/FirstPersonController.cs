@@ -603,7 +603,7 @@ namespace Platformers
                 movementSpeed = walkSpeed;
             }
 
-            HandleFootsteps();
+            //HandleFootsteps();
 
             // 4. Handle Direction and final movement
 
