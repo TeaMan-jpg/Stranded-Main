@@ -22,10 +22,11 @@ MonoBehaviour:
   strengthBonus: 0
   healthBonus: 0
   staminaBonus: 0
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 3757464535479794958, guid: cd8b862997a9dec4e9f6b4f9218a1e72, type: 3}
   stackable: 1
   ID: 27e6f294-3332-4759-a4d1-dffd104682a0
   image: {fileID: 0}
-  itemModel: {fileID: 0}
+  itemModel: {fileID: 3757464535479794958, guid: cd8b862997a9dec4e9f6b4f9218a1e72, type: 3}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 3757464535479794958, guid: cd8b862997a9dec4e9f6b4f9218a1e72, type: 3}

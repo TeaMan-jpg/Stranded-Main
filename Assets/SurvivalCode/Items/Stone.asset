@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
   itemType: 0
-  attackType: 0
+  attackType: 2
   actionType: 0
   equipmentType: 0
   defenseBonus: 0
@@ -22,10 +22,11 @@ MonoBehaviour:
   strengthBonus: 0
   healthBonus: 0
   staminaBonus: 0
-  weaponPrefab: {fileID: 0}
+  weaponPrefab: {fileID: 3023379925215635203, guid: 4035a2e28844b0b40a644c50149ac719, type: 3}
   stackable: 1
   ID: b4e8cfc0-a4e4-47e7-8975-92523444a3d4
   image: {fileID: 21300000, guid: 77ab5c658bcb7bb41acf616b751a322f, type: 3}
-  itemModel: {fileID: 0}
+  itemModel: {fileID: 3023379925215635203, guid: 4035a2e28844b0b40a644c50149ac719, type: 3}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 3023379925215635203, guid: 4035a2e28844b0b40a644c50149ac719, type: 3}

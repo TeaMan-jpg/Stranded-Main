@@ -10,23 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e10c43fbf4082c543990565f8f8a1cb8, type: 3}
-  m_Name: IronSword
+  m_Name: Steak
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 0
-  attackType: 0
+  itemType: 3
+  attackType: 2
   actionType: 0
   equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
-  strengthBonus: 0
-  healthBonus: 0
-  staminaBonus: 0
-  weaponPrefab: {fileID: 72997729430688336, guid: e32f91bfdbc590141b5ee13e272e6433, type: 3}
+  strengthBonus: 3
+  healthBonus: 23
+  staminaBonus: 42
+  weaponPrefab: {fileID: 7793198891564166686, guid: 72afc2a0e0ed72241a349e8b3a2e6ce5, type: 3}
   stackable: 1
-  ID: b1ea2d46-ffbf-4535-9926-36402c2623d8
-  image: {fileID: 21300000, guid: ede6b3f13c1ba104d98b572ce8728df1, type: 3}
-  itemModel: {fileID: 72997729430688336, guid: e32f91bfdbc590141b5ee13e272e6433, type: 3}
+  ID: 0e9f3971-ab7e-4ae5-b5bd-c320ec5e7228
+  image: {fileID: 0}
+  itemModel: {fileID: 7793198891564166686, guid: 72afc2a0e0ed72241a349e8b3a2e6ce5, type: 3}
   itemName: 
   price: 0
-  equippedPrefab: {fileID: 72997729430688336, guid: e32f91bfdbc590141b5ee13e272e6433, type: 3}
+  equippedPrefab: {fileID: 7793198891564166686, guid: 72afc2a0e0ed72241a349e8b3a2e6ce5, type: 3}

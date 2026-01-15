@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e10c43fbf4082c543990565f8f8a1cb8, type: 3}
-  m_Name: IronSword
+  m_Name: StonePickaxe
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
   itemType: 0
-  attackType: 0
+  attackType: 2
   actionType: 0
   equipmentType: 0
   defenseBonus: 0
@@ -22,11 +22,11 @@ MonoBehaviour:
   strengthBonus: 0
   healthBonus: 0
   staminaBonus: 0
-  weaponPrefab: {fileID: 72997729430688336, guid: e32f91bfdbc590141b5ee13e272e6433, type: 3}
+  weaponPrefab: {fileID: 3757464535479794958, guid: cd8b862997a9dec4e9f6b4f9218a1e72, type: 3}
   stackable: 1
-  ID: b1ea2d46-ffbf-4535-9926-36402c2623d8
-  image: {fileID: 21300000, guid: ede6b3f13c1ba104d98b572ce8728df1, type: 3}
-  itemModel: {fileID: 72997729430688336, guid: e32f91bfdbc590141b5ee13e272e6433, type: 3}
+  ID: 2d6e869e-8d0a-4482-90a4-039662ff1b9a
+  image: {fileID: 0}
+  itemModel: {fileID: 3757464535479794958, guid: cd8b862997a9dec4e9f6b4f9218a1e72, type: 3}
   itemName: 
   price: 0
-  equippedPrefab: {fileID: 72997729430688336, guid: e32f91bfdbc590141b5ee13e272e6433, type: 3}
+  equippedPrefab: {fileID: 3757464535479794958, guid: cd8b862997a9dec4e9f6b4f9218a1e72, type: 3}
