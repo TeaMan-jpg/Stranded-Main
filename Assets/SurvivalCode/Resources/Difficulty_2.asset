@@ -27,4 +27,4 @@ MonoBehaviour:
   detectionAngle: 75
   innerDetectionRadius: 10
   detectionCooldown: 0.5
-  enemySpeedMultiplier: 1
+  enemySpeedMultiplier: 4

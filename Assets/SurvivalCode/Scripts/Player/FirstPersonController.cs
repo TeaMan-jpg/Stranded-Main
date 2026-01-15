@@ -33,6 +33,7 @@ namespace Platformers
         private InputAction lookAction;
         private InputAction mineAction;
         private InputAction dashAction;
+
         private Vector2 moveInput;
         private Vector2 lookInput;
         [SerializeField] GameObject weaponHolder;
@@ -106,6 +107,12 @@ namespace Platformers
         private float dashingTime = 0.2f;
         private float dashingCooldown = 0.75f;
 
+        [Header("Audio Settings")]
+        [SerializeField] private float baseStepSpeed = 0.5f; // How often a step plays when walking
+        [SerializeField] private float sprintStepMultiplier = 0.6f; // Makes steps faster when sprinting
+        [SerializeField] private float crouchStepMultiplier = 1.5f; // Makes steps slower when crouching
+        private float footstepTimer = 0;
+
 
         public void SpawnRunningParticles() {
         
@@ -134,6 +141,35 @@ namespace Platformers
             PlayerData data = SaveSystem.LoadPlayer();
 
         }
+        private void HandleFootsteps()
+        {
+            if (!characterController.isGrounded || moveInput == Vector2.zero) return;
+
+            footstepTimer -= Time.deltaTime;
+
+            if (footstepTimer <= 0)
+            {
+                // TRIGGER PARTICLES HERE (Only once per step!)
+                SpawnRunningParticles();
+
+                if (isCrouching)
+                {
+                    audioManager.PlaySFX("slowsteps");
+                    footstepTimer = baseStepSpeed * crouchStepMultiplier;
+                }
+                else if (sprintAction.ReadValue<float>() > 0 && staminaManager.currentStamina > 0)
+                {
+                    audioManager.PlaySFX("running");
+                    footstepTimer = baseStepSpeed * sprintStepMultiplier;
+                }
+                else
+                {
+                    audioManager.PlaySFX("walking");
+                    footstepTimer = baseStepSpeed;
+                }
+            }
+        }
+
 
 
 
@@ -160,6 +196,9 @@ namespace Platformers
 
 
             characterController = GetComponent<CharacterController>();
+            audioManager = GameObject.Find("AudioManager").GetComponent<AudioManager>();
+
+
             healthManager = GameObject.Find("HealthManager").GetComponent<HealthManager>();
 
 
@@ -516,18 +555,21 @@ namespace Platformers
 
                     if (staminaManager.currentStamina < 1f)
                     {
+                        
                         Debug.Log("Out of Stamina, cannot sprint while crouching.");
                         movementSpeed = crouchSpeed;
                     }
 
                     else
                     {
+                        
                         Debug.Log("Out of Stamina, cannot sprint.");
                         movementSpeed = walkSpeed * 0.5f;
                     }
                 }
                 else
                 {
+
                     Debug.Log("Out of Stamina, cannot sprint while crouching.");
                     movementSpeed = crouchSpeed;
 
@@ -547,17 +589,21 @@ namespace Platformers
                 // Apply Sprint
                 else
                 {
+
                     staminaManager.StartStaminaDrain();
                     movementSpeed = sprintSpeed;
                 }
+
             }
             else
             {
                 // Normal Walk
+
                 staminaManager.StopStaminaDrain();
                 movementSpeed = walkSpeed;
             }
 
+            HandleFootsteps();
 
             // 4. Handle Direction and final movement
 
@@ -578,7 +624,7 @@ namespace Platformers
 
             currentMovement.x = moveDirections.x * movementSpeed; // updated to use moveDirections
             currentMovement.z = moveDirections.z * movementSpeed; // updated to use moveDirections
-            SpawnRunningParticles();
+
 
 
             if (staminaManager.CanPerformAction() && jumpAction.triggered)
@@ -634,31 +680,29 @@ namespace Platformers
         }
 
 
-        public const string IDLE = "Idle";
-        public const string WALK = "Walk";
-        public const string ATTACK1 = "Attack 1";
-        public const string ATTACK2 = "Attack 2";
+        //public const string ATTACK1 = "Attack 1";
+        //public const string ATTACK2 = "Attack 2";
 
         string currentAnimationState;
 
-        public void ChangeAnimationState(string newState)
-        {
-            // STOP THE SAME ANIMATION FROM INTERRUPTING WITH ITSELF //
-            if (currentAnimationState == newState) return;
+        //public void ChangeAnimationState(string newState)
+        //{
+        //    // STOP THE SAME ANIMATION FROM INTERRUPTING WITH ITSELF //
+        //    if (currentAnimationState == newState) return;
 
-            // PLAY THE ANIMATION //
-            currentAnimationState = newState;
-            animator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
-        }
+        //    // PLAY THE ANIMATION //
+        //    currentAnimationState = newState;
+        //    animator.CrossFadeInFixedTime(currentAnimationState, 0.2f);
+        //}
 
-        void SetAnimations()
-        {
-            // If player is not attacking
-            if (!attacking)
-            {
+        //void SetAnimations()
+        //{
+        //    // If player is not attacking
+        //    if (!attacking)
+        //    {
 
-            }
-        }
+        //    }
+        //}
 
         // ------------------- //
         // ATTACKING BEHAVIOUR //
@@ -670,47 +714,46 @@ namespace Platformers
         
 
 
-        public AudioClip swordSwing;
-        public AudioClip hitSound;
+        
 
-        bool attacking = false;
-        bool readyToAttack = true;
-        int attackCount;
+        //bool attacking = false;
+        //bool readyToAttack = true;
+        //int attackCount;
 
-        public void Attack()
-        {
-            if (!readyToAttack || attacking) return;
+        //public void Attack()
+        //{
+        //    if (!readyToAttack || attacking) return;
 
-            readyToAttack = false;
-            attacking = true;
+        //    readyToAttack = false;
+        //    attacking = true;
 
-            Invoke(nameof(ResetAttack), attackSpeed);
-            Invoke(nameof(AttackRaycast), attackDelay);
+        //    Invoke(nameof(ResetAttack), attackSpeed);
+        //    Invoke(nameof(AttackRaycast), attackDelay);
 
             
             
-            ChangeAnimationState(ATTACK1);
+        //    ChangeAnimationState(ATTACK1);
                 
             
             
-        }
+        //}
 
-        void ResetAttack()
-        {
-            attacking = false;
-            readyToAttack = true;
-        }
+        //void ResetAttack()
+        //{
+        //    attacking = false;
+        //    readyToAttack = true;
+        //}
 
-        void AttackRaycast()
-        {
-            if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit, 3, attackLayer))
-            {
+        //void AttackRaycast()
+        //{
+        //    if (Physics.Raycast(mainCamera.transform.position, mainCamera.transform.forward, out RaycastHit hit, 3, attackLayer))
+        //    {
 
 
-                if (hit.transform.TryGetComponent<EnemyAI>(out EnemyAI T))
-                { T.TakeDamage(10); }
-            }
-        }
+        //        if (hit.transform.TryGetComponent<EnemyAI>(out EnemyAI T))
+        //        { T.TakeDamage(10); }
+        //    }
+        //}
 
         // Handle collisions with projectiles so that the player can take damage or block them
         private void OnCollisionEnter(Collision collision)

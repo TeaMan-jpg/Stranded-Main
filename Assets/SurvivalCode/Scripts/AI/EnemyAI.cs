@@ -164,7 +164,7 @@ namespace Platformers
 
 
             Console.WriteLine($"Enemy {gameObject.name} loaded Difficulty {level} from PlayerPrefs/Resources.");
-
+            Debug.Log(attackCooldown);
             // Re-initialize your timers
             float finalAttackTime = s.attackCooldown * s.timeBetweenAttacksMultiplier;
             attackTimer = new CountdownTimer(finalAttackTime);
