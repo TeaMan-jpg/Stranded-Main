@@ -35,36 +35,35 @@ public class SettingsMenu : MonoBehaviour
     }
     void Start()
     {
-        //SetupResolutionDropdown();
+        SetupResolutionDropdown();
         LoadSettings();
-        //SetSFXVolume();
-        //SetMusicVolume();
+        
     }
 
-    //void SetupResolutionDropdown()
-    //{
-    //    resolutions = Screen.resolutions;
-    //    resolutionDropdown.ClearOptions();
+    void SetupResolutionDropdown()
+    {
+        resolutions = Screen.resolutions;
+        resolutionDropdown.ClearOptions();
 
-    //    List<string> options = new List<string>();
-    //    int currentResolutionIndex = 0;
+        List<string> options = new List<string>();
+        int currentResolutionIndex = 0;
 
-    //    for (int i = 0; i < resolutions.Length; i++)
-    //    {
-    //        string option = resolutions[i].width + " x " + resolutions[i].height + " @ " + resolutions[i].refreshRateRatio + "Hz";
-    //        options.Add(option);
+        for (int i = 0; i < resolutions.Length; i++)
+        {
+            string option = resolutions[i].width + " x " + resolutions[i].height + " @ " + resolutions[i].refreshRateRatio + "Hz";
+            options.Add(option);
 
-    //        if (resolutions[i].width == Screen.currentResolution.width &&
-    //            resolutions[i].height == Screen.currentResolution.height)
-    //        {
-    //            currentResolutionIndex = i;
-    //        }
-    //    }
+            if (resolutions[i].width == Screen.currentResolution.width &&
+                resolutions[i].height == Screen.currentResolution.height)
+            {
+                currentResolutionIndex = i;
+            }
+        }
 
-    //    resolutionDropdown.AddOptions(options);
-    //    resolutionDropdown.value = currentResolutionIndex;
-    //    resolutionDropdown.RefreshShownValue();
-    //}
+        resolutionDropdown.AddOptions(options);
+        resolutionDropdown.value = currentResolutionIndex;
+        resolutionDropdown.RefreshShownValue();
+    }
 
     public void SetMusicVolume()
     {
