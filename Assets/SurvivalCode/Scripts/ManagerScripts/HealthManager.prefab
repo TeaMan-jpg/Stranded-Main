@@ -1,0 +1,85 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8684033780039264143
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2287658851102570887}
+  - component: {fileID: 2616280240998103517}
+  m_Layer: 0
+  m_Name: HealthManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2287658851102570887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8684033780039264143}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2616280240998103517
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8684033780039264143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e3bff32fa1d6dbd4cbae515b31282ab6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healthSlider: {fileID: 0}
+  health: 100
+  Heals:
+    m_Name: Heals
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 5d886a05-ac18-4f66-a98f-de253836b3f6
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 5d7f066a-441e-4b4b-9d94-278c1480f270
+      m_Path: <Keyboard>/enter
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Heals
+      m_Flags: 0
+    m_Flags: 0
+  TakeDamages:
+    m_Name: Take Damages
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: f3eb7b01-31ac-4dcb-bc03-cfb8f93ca363
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 23a6a31e-558f-4fc5-9879-767170bacc81
+      m_Path: <Keyboard>/backspace
+      m_Interactions: Press
+      m_Processors: 
+      m_Groups: 
+      m_Action: Take Damages
+      m_Flags: 0
+    m_Flags: 0
+  inventorySlots: []
+  maxHealth: 0
+  CharacterStats: {fileID: 0}

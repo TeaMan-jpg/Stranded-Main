@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: eb6cbefd7e3a5b24384f4d7125335b54
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - inventoryPrefab: {instanceID: 0}
+  - weaponHolder: {fileID: 6679153144501748285, guid: 10c71dd15336def478ee3ad6c6421e58, type: 3}
+  - Hotbar: {fileID: -944628639613478452, guid: 80c4ca16da9e2c941a342f0b8cb7fd46, type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

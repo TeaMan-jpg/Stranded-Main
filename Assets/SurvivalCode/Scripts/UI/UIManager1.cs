@@ -1,0 +1,77 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement; 
+
+namespace Platformers
+{
+    public class UIManager : MonoBehaviour
+    {
+        public GameObject gameOverScreen;
+
+
+        [SerializeField] private FirstPersonController playerController;
+
+
+        // sets up references and ensures the game over screen is disabled at start
+        private void Awake()
+        {
+            if (gameOverScreen == null)
+            {
+                GameManager.enables = false; 
+                return;
+            }
+            gameOverScreen.SetActive(false);
+
+            if (playerController == null)
+            {
+                playerController = GameObject.Find("FPSController").GetComponent<FirstPersonController>();
+                
+            }
+        }
+
+        // enables the game over screen when the player dies or starves
+        public void OnEnable()
+        {
+                HealthManager.PlayerDead += ShowGameOverScreen;
+
+            
+        }
+
+        private void OnDisable()
+        {
+                HealthManager.PlayerDead -= ShowGameOverScreen;
+                
+            
+        }
+
+        void ShowGameOverScreen()
+        {
+            Time.timeScale = 0f;
+            if (gameOverScreen != null) // Check if the UI element still exists
+            {
+                GameManager.enables = true;
+                gameOverScreen.SetActive(true);
+            }
+            
+            // Disable player controls when game over screen appears
+            if (playerController != null)
+            {
+                playerController.SetControlsEnabled(false);
+            }
+
+        }
+        // restarts the current scene
+        public void RestartGame()
+        {
+            Time.timeScale = 1f;
+           
+
+            // Deactivate the game over screen to prevent a flicker before the scene reloads
+            gameOverScreen.SetActive(false);
+
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+    }
+}

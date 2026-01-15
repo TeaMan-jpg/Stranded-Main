@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: d3bbe04c427f86349b8b9eb32d06e634
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - loadingScreen: {fileID: 3345441420687935709, guid: 4f7145461ff02264c82f425c168b6be8, type: 3}
+  - canvas: {fileID: 5744591078588168287, guid: c386edded282809418c5d5c2eba4e2e0, type: 3}
+  - slider: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
