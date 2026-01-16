@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Ramen
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 3
+  itemType: 0
   attackType: 2
-  actionType: 3
-  equipmentType: 5
+  actionType: 0
+  equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
   strengthBonus: 0
@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 30
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: 97b23fee-b408-417e-ae1e-5846773e011e
+  id: 3b4bc83c-19d2-4619-92d9-b94a2269c3bd
   image: {fileID: 21300000, guid: 2c5ca88ad40151e4cbb51fe425cd3f00, type: 3}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

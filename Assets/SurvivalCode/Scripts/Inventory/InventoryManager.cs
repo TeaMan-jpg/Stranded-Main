@@ -5,6 +5,7 @@ namespace Platformers
 {
     public class InventoryManager : MonoBehaviour
     {
+        public ItemDatabase itemDatabase;
         public InventorySlot[] inventorySlots;
         public GameObject inventoryPrefab;
         public int maxItemCount = 1;
@@ -264,5 +265,64 @@ namespace Platformers
         {
             foreach (var action in hotbarActions) action?.Disable();
         }
+
+        public InventorySave ExportInventory()
+        {
+            var save = new InventorySave { selectedSlot = selectedSlot };
+
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                var itemUI = inventorySlots[i].GetComponentInChildren<InventoryItem>();
+                if (itemUI == null || itemUI.item == null) continue;
+
+                save.slots.Add(new SlotSave
+                {
+                    slotIndex = i,
+                    itemId = itemUI.item.Id,
+                    count = itemUI.count
+                });
+            }
+
+            return save;
+        }
+
+        public void ImportInventory(InventorySave save)
+        {
+            //clear current UI
+            for (int i = 0; i < inventorySlots.Length; i++)
+            {
+                var itemUI = inventorySlots[i].GetComponentInChildren<InventoryItem>();
+                if (itemUI != null) Destroy(itemUI.gameObject);
+            }
+
+            if (save != null)
+            {
+                foreach (var s in save.slots)
+                {
+                    if (s.slotIndex < 0 || s.slotIndex >= inventorySlots.Length) continue;
+                    if (string.IsNullOrEmpty(s.itemId) || s.count <= 0) continue;
+
+                    if (!itemDatabase.TryGet(s.itemId, out var item)) continue;
+
+                    SpawnNewItem(item, inventorySlots[s.slotIndex]);
+
+                    var itemUI = inventorySlots[s.slotIndex].GetComponentInChildren<InventoryItem>();
+                    if (itemUI != null)
+                    {
+                        itemUI.count = s.count;
+                        itemUI.RefreshCount();
+                    }
+                }
+
+                ChangeSelectedSlot(Mathf.Clamp(save.selectedSlot, 0, inventorySlots.Length - 1));
+            }
+            else
+            {
+                ChangeSelectedSlot(0);
+            }
+
+            RefreshHandVisuals();
+        }
+
     }
 }

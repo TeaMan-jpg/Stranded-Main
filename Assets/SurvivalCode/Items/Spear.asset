@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Spear
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 1
+  itemType: 0
   attackType: 1
-  actionType: 1
+  actionType: 0
   equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 0
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: 2eb3eee9-1a3a-4ac1-8c05-365e48752053
+  id: ff22c28e-ecfe-44cd-a12d-8ad94cac024b
   image: {fileID: 21300000, guid: 51ab6fbdebd328946913426163c6bcb3, type: 3}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

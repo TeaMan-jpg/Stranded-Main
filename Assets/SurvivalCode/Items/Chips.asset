@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Chips
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 3
+  itemType: 0
   attackType: 2
-  actionType: 3
-  equipmentType: 5
+  actionType: 0
+  equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
   strengthBonus: 0
@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 45
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: 2f89dc0f-aa5c-4cde-91c1-b2df5cc86eb6
+  id: cbfb753d-46cf-4bb8-82f0-53c701ca997d
   image: {fileID: 21300000, guid: cd18ee529a58e3042bb79ee5f48ca1ac, type: 3}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

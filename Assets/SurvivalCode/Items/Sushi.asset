@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Sushi
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 3
+  itemType: 0
   attackType: 2
-  actionType: 3
-  equipmentType: 5
+  actionType: 0
+  equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
   strengthBonus: 0
@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 25
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: bcbc92cd-43ed-4eed-aebd-ac9d0c7e5838
+  id: 1162c0e0-cdf6-46b3-acf1-e36d93ce97a4
   image: {fileID: 21300000, guid: c33ead1bec2493a4f840cfac0ddb65d7, type: 3}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

@@ -24,7 +24,7 @@ MonoBehaviour:
   staminaBonus: 12
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: 075a7bd9-4973-4d85-a890-4cff9262e8ba
+  id: 7770e666-23d6-40f8-8a34-014d4f1370a8
   image: {fileID: 21300000, guid: 4da36c604a05be1479cbd8879a736261, type: 3}
   itemModel: {fileID: 0}
   itemName: Axe

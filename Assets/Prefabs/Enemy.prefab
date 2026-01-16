@@ -286,7 +286,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: bb136771c9fb1e144abcabf7d88b9ed2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -366,7 +366,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   navAgent: {fileID: 1156838627177491741}
-  collisionParticleSystem: {fileID: 9105110791152838824}
   playerDetector: {fileID: 5776617421438094601}
   attackRange: 10
   waypoints: []
@@ -381,6 +380,7 @@ MonoBehaviour:
   playerLayerMask:
     serializedVersion: 2
     m_Bits: 2048
+  damageParticleSystem: {fileID: 0}
   once: 1
   attackCooldown: 1
   forwardShotForce: 10

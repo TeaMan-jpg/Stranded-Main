@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 0
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: 0c3e0401-61b4-4619-a627-7a37a70c7687
+  id: 3df07a8a-f715-4c40-94d9-f1e959ec9e8c
   image: {fileID: 0}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

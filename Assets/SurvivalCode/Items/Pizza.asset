@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Pizza
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 3
+  itemType: 0
   attackType: 2
-  actionType: 3
-  equipmentType: 5
+  actionType: 0
+  equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
   strengthBonus: 0
@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 50
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: e16cc2c3-f583-4721-93ef-30bc77530330
+  id: 25d2e559-cdfe-4c4b-88d2-70613c4373cb
   image: {fileID: 21300000, guid: 4665a3c02d643224291e10a47a78f692, type: 3}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

@@ -711,10 +711,10 @@ namespace Platformers
         [Header("Attacking")]
        
         public float attackSpeed = 1f;
-        
 
 
-        
+
+
 
         //bool attacking = false;
         //bool readyToAttack = true;
@@ -730,12 +730,12 @@ namespace Platformers
         //    Invoke(nameof(ResetAttack), attackSpeed);
         //    Invoke(nameof(AttackRaycast), attackDelay);
 
-            
-            
+
+
         //    ChangeAnimationState(ATTACK1);
-                
-            
-            
+
+
+
         //}
 
         //void ResetAttack()
@@ -763,41 +763,22 @@ namespace Platformers
             {
 
                 Debug.Log("hit");
-                // --- THIS IS THE NEW LOGIC ---
 
-                if (weaponHolder != null)
+
+
+
+                // Try to get the Projectile component to access damage value.
+
+                if (collision.gameObject.TryGetComponent<Projectile>(out var projectile))
                 {
-                    // --- DEFENDING LOGIC ---
-                    for (int i = 0; i < weaponHolder.transform.childCount; i++) {
-                        SwordCollisionDetector weapon = weaponHolder.transform.GetChild(i).GetComponent<SwordCollisionDetector>();
-                        if (weapon != null && weapon.isDefending)
-                        {
-                            Debug.Log("Blocked! Player defended against a projectile.");
-                            // Optionally, you can add effects or sounds for blocking here.
-                            return; // Exit the method since the attack was blocked.
 
-                        }
-
-                    }
-                }
-                else
-                {
-                    // --- NOT DEFENDING LOGIC (Take Damage) ---
-                    Debug.Log("HIT! Player took damage from a projectile.");
-                    Debug.Log(healthManager.health);
-                    Debug.Log(healthManager.maxHealth);
-                    // Try to get the Projectile component to access damage value.
-
-                    if (collision.gameObject.TryGetComponent<Projectile>(out var projectile))
+                    if (healthManager != null)
                     {
+                        healthManager.TakeDamage(10);
 
-                        if (healthManager != null)
-                        {
-                            healthManager.TakeDamage(0);
-
-                        }
                     }
                 }
+
 
 
             }

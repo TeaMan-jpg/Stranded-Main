@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Potato
   m_EditorClassIdentifier: 
   vector: {x: 5, y: 4}
-  itemType: 3
+  itemType: 0
   attackType: 2
-  actionType: 3
-  equipmentType: 5
+  actionType: 0
+  equipmentType: 0
   defenseBonus: 0
   attackBonus: 0
   strengthBonus: 0
@@ -24,8 +24,9 @@ MonoBehaviour:
   staminaBonus: 15
   weaponPrefab: {fileID: 0}
   stackable: 1
-  ID: 946a32ce-1ee4-41c5-96ae-5979c6599e7c
+  id: 7bf43dc0-f534-48c3-8965-0e9f9382b4e1
   image: {fileID: 21300000, guid: 5f8776c41305cea46b78730daa9b7f11, type: 3}
   itemModel: {fileID: 0}
   itemName: 
   price: 0
+  equippedPrefab: {fileID: 0}

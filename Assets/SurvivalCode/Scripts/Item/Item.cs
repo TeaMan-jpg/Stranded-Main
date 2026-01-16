@@ -6,34 +6,46 @@ namespace Platformers
     [CreateAssetMenu(menuName = "Scriptable Object/Item")]
     public class Item : ScriptableObject
     {
-      [Header("Gameplay")]
-      public Vector2 vector = new Vector2(5,4);
-      public ItemType itemType;
-      public AttackType attackType;
-      public ActionType actionType;
-      public EquipmentType equipmentType;
+     [Header("Gameplay")]
+     public Vector2 vector = new Vector2(5,4);
+     public ItemType itemType;
+     public AttackType attackType;
+     public ActionType actionType;
+     public EquipmentType equipmentType;
 
-      // bonuses used for equippable items that improve player stats
-      public int defenseBonus;
-      public int attackBonus;
-      public int strengthBonus;
-      public int healthBonus;
-      public int staminaBonus;
-      public GameObject weaponPrefab;
+     // bonuses used for equippable items that improve player stats
+     public int defenseBonus;
+     public int attackBonus;
+     public int strengthBonus;
+     public int healthBonus;
+     public int staminaBonus;
+     public GameObject weaponPrefab;
 
-      [Header("Only UI")]
-      public bool stackable = true;
-      public string ID = System.Guid.NewGuid().ToString();
-    
+     [Header("Only UI")]
+     public bool stackable = true;
+     [SerializeField] private string id;
+     public string Id => id;
+#if UNITY_EDITOR
+private void OnValidate()
+{
+    if (string.IsNullOrEmpty(id))
+    {
+        id = System.Guid.NewGuid().ToString();
+    }
+}
+#endif
 
-      [Header("UI + Gameplay")]
-      public Sprite image;
-      public GameObject itemModel;
-      public string itemName;
-      public int price;
 
-      [Header("Model")]
-      public GameObject equippedPrefab;
+
+
+        [Header("UI + Gameplay")]
+     public Sprite image;
+     public GameObject itemModel;
+     public string itemName;
+     public int price;
+
+     [Header("Model")]
+     public GameObject equippedPrefab;
     }
     // Enum for different item types
     public enum ItemType
