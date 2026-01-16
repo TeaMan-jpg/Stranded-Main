@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6562160373778421483}
   - component: {fileID: 6803465209221565619}
   - component: {fileID: 7885900573538294209}
-  - component: {fileID: 5176703147863417186}
+  - component: {fileID: 3222413195708198789}
   m_Layer: 0
   m_Name: Forest Tree
   m_TagString: Untagged
@@ -95,7 +95,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &5176703147863417186
+--- !u!136 &3222413195708198789
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -114,7 +114,7 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 6.0905066
+  m_Radius: 1
   m_Height: 19.210382
   m_Direction: 1
-  m_Center: {x: -0.9344032, y: 9.605191, z: 0.92596674}
+  m_Center: {x: 0, y: 9.605191, z: 0}
