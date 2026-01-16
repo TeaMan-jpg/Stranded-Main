@@ -35,35 +35,12 @@ public class SettingsMenu : MonoBehaviour
     }
     void Start()
     {
-        SetupResolutionDropdown();
+       
         LoadSettings();
         
     }
 
-    void SetupResolutionDropdown()
-    {
-        resolutions = Screen.resolutions;
-        resolutionDropdown.ClearOptions();
-
-        List<string> options = new List<string>();
-        int currentResolutionIndex = 0;
-
-        for (int i = 0; i < resolutions.Length; i++)
-        {
-            string option = resolutions[i].width + " x " + resolutions[i].height + " @ " + resolutions[i].refreshRateRatio + "Hz";
-            options.Add(option);
-
-            if (resolutions[i].width == Screen.currentResolution.width &&
-                resolutions[i].height == Screen.currentResolution.height)
-            {
-                currentResolutionIndex = i;
-            }
-        }
-
-        resolutionDropdown.AddOptions(options);
-        resolutionDropdown.value = currentResolutionIndex;
-        resolutionDropdown.RefreshShownValue();
-    }
+    
 
     public void SetMusicVolume()
     {
@@ -109,18 +86,18 @@ public class SettingsMenu : MonoBehaviour
     // Call this in Start to make sure settings stay after closing the game
     void LoadSettings()
     {
-        //if (PlayerPrefs.HasKey("SavedVolume"))
-        //{
-        //    float vol = PlayerPrefs.GetFloat("SavedVolume");
-        //    volumeSlider.value = vol;
-        //    SetVolume(vol);
-        //}
+        if (PlayerPrefs.HasKey("SavedVolume"))
+        {
+            float vol = PlayerPrefs.GetFloat("SavedVolume");
+            MusicVolumeSlider.value = vol;
+            SetMusicVolume();
+        }
 
-        //if (PlayerPrefs.HasKey("SavedSensitivity"))
-        //{
-        //    float sens = PlayerPrefs.GetFloat("SavedSensitivity");
-        //    sensitivitySlider.value = sens;
-        //    MouseSensitivity = sens;
-        //}
+        if (PlayerPrefs.HasKey("SavedSensitivity"))
+        {
+            float sens = PlayerPrefs.GetFloat("SavedSensitivity");
+            sensitivitySlider.value = sens;
+            MouseSensitivity = sens;
+        }
     }
 }
