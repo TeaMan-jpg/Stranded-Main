@@ -5,6 +5,7 @@
 //{
 //    // AfterSceneLoad is better for checking the BuildIndex
 //    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
+
 //    public static void Execute()
 //    {
 //        int currentBuildIndex = SceneManager.GetActiveScene().buildIndex;
@@ -14,12 +15,9 @@
 
 //        // 2. If Persistence ALREADY exists, do NOT spawn another one
 //        // (This prevents duplicates when moving between Level 1 and Level 2)
-//        if (GameObject.Find("Persistence") != null || GameObject.Find("Persistence(Clone)") != null)
+        
+//        if (currentBuildIndex == 1)
 //        {
-//            return;
-//        }
-
-//        if (currentBuildIndex == 1) {
 //            Object.DontDestroyOnLoad(Object.Instantiate(Resources.Load("Persistence")));
 
 //        }

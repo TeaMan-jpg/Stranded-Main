@@ -96,7 +96,11 @@ public class SettingsMenu : MonoBehaviour
         if (PlayerPrefs.HasKey("SavedSensitivity"))
         {
             float sens = PlayerPrefs.GetFloat("SavedSensitivity");
-            sensitivitySlider.value = sens;
+            Debug.Log("Loaded Sensitivity: " + sensitivitySlider);
+            if (sensitivitySlider != null)
+            {
+                sensitivitySlider.value = sens;
+            }
             MouseSensitivity = sens;
         }
     }
